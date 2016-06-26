@@ -24,12 +24,64 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <script src="https://www.gstatic.com/firebasejs/3.0.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.0.5/firebase-database.js"></script>
+
 </head>
 
 <body>
 
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">×</span>
+      <h2>PROTECT YOUR CAPITAL NOW</h2>
+      <h4>Why fill out this form?</h4>
+      <form id="frm1" onSubmit="return submitForm()">
+      Name:<br>
+      <input type="text" name="name" required><br>
+      Email:<br>
+      <input type="text" name="email" required><br>
+      Phone number:<br>
+      <input type="text" name="phone" required><br><br>
+      <input type="submit" value="Submit">
+      </form>
+    </div>
+
+  </div>
+
+  <script>
+  // Get the modal
+  var modal = document.getElementById('myModal');
+
+  // Get the <span> element that closes the modal
+  var span = document.getElementsByClassName("close")[0];
+
+  // When the user clicks the button, open the modal
+  setTimeout(()=> {
+    modal.style.display = "block";
+  }, 1000);
 
 
+  // When the user clicks on <span> (x), close the modal
+  span.onclick = function() {
+    modal.style.display = "none";
+    setTimeout(()=> {
+      modal.style.display = "block";
+    }, 30000);
+  }
+
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+        setTimeout(()=> {
+          modal.style.display = "block";
+        }, 30000);
+    }
+  }
+  </script>
     <!-- Full Width Image Header -->
     <header class="header-image">
         <div class="headline">
@@ -108,6 +160,35 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
+
+
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyDq2LOvJHjLRkwMPTOG8f8t3ky1zjRS_Fg",
+        authDomain: "howmanytrillions-d1330.firebaseapp.com",
+        databaseURL: "https://howmanytrillions-d1330.firebaseio.com",
+        storageBucket: "",
+      };
+      firebase.initializeApp(config);
+    </script>
+    <script>
+  function submitForm() {
+    var form = document.getElementById('frm1')
+    var ref = firebase.database().ref().child('people').push();
+    alert(firebase.database().ref().child('posts').push().key);
+    ref.set({
+      name: form.name.value,
+      email: form.email.value,
+      phone: form.phone.value
+    }, (error) => {
+      alert("Form submitted" + error.message);
+      // document.getElementById('myModal').style.display = "none";
+    });
+  }
+  </script>
+
+
 
 </body>
 
