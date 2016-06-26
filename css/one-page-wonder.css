@@ -43,7 +43,21 @@ a {
 }
 
 .headline h2 {
-    font-size: 30px;
+    font-size: 44px;
+    font-weight: bold;
+    /*background: #fff;*/
+    /*background: rgba(255,255,255,0.9);*/
+}
+
+.headline h3 {
+    font-size: 28px;
+    /*background: #fff;*/
+    /*background: rgba(255,255,255,0.9);*/
+}
+
+.headline h4 {
+    font-size: 16px;
+    padding-top: 10px;
     /*background: #fff;*/
     /*background: rgba(255,255,255,0.9);*/
 }
@@ -72,13 +86,24 @@ footer {
     margin: 50px 0;
 }
 
+
+
+
+
+
+
+
 @media(max-width:1200px) {
     .headline h1 {
         font-size: 100px;
     }
 
     .headline h2 {
-        font-size: 33px;
+        font-size: 40px;
+    }
+
+    .headline h3 {
+        font-size: 28px;
     }
 
     .featurette-divider {
@@ -100,11 +125,15 @@ footer {
 
 @media(max-width:991px) {
     .headline h1 {
-        font-size: 75px;
+        font-size: 68px;
     }
 
     .headline h2 {
-        font-size: 25px;
+        font-size: 28px;
+    }
+
+    .headline h3 {
+        font-size: 23px;
     }
 
     .featurette-divider {
@@ -150,7 +179,11 @@ footer {
     }
 
     .headline h2 {
-        font-size: 32px;
+        font-size: 28px;
+    }
+
+    .headline h3 {
+        font-size: 20px;
     }
 
     .featurette-divider {
@@ -169,6 +202,10 @@ footer {
 
     .headline h2 {
         font-size: 20px;
+    }
+
+    .headline h3 {
+        font-size: 16px;
     }
 }
 
