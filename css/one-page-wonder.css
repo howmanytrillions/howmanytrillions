@@ -6,7 +6,8 @@
 
 body {
     margin-top: 0px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
-    background-color: #e3e3e3;
+    background-color: #FFF;
+	font-family: 'Ariel';
 }
 
 a {
@@ -26,7 +27,8 @@ a {
 }
 
 .headline {
-    padding: 100px 0;
+    padding-top: 20px;
+    padding-bottom: 100px;
 }
 
 .featurette-image {
@@ -43,7 +45,7 @@ a {
 }
 
 .headline h2 {
-    font-size: 44px;
+    font-size: 42px;
     font-weight: bold;
     /*background: #fff;*/
     /*background: rgba(255,255,255,0.9);*/
